@@ -9,3 +9,9 @@
 /composer.phar
 /vendor/
 /web/bundles/
+.idea/workspace.xml
+.idea/vcs.xml
+.idea/php.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/SymfonyRest.iml
