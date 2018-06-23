@@ -1,6 +1,6 @@
 <?php
 
-//namespace AppBundle\Test;
+namespace AppBundle\Test;
 
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Exception;
@@ -59,7 +59,7 @@ class ApiTestCase extends KernelTestCase
      */
     protected function tearDown()
     {
-        // purposefully not calling parent class, which shuts down the kernel
+
     }
 
     protected function onNotSuccessfulTest(Exception $e)
@@ -199,8 +199,8 @@ class ApiTestCase extends KernelTestCase
         if ($this->formatterHelper === null) {
             $this->formatterHelper = new FormatterHelper();
         }
-        $output = $this->formatterHelper->formatBlock($string, 'bg=red;fg=white', true);
 
+        $output = $this->formatterHelper->formatBlock($string, 'bg=red;fg=white', true);
         $this->printDebug($output);
     }
 }
