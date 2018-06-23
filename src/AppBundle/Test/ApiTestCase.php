@@ -29,6 +29,12 @@ class ApiTestCase extends KernelTestCase
 
     private $formatterHelper;
 
+    /**
+     * @var  \ResponseAsserter
+     */
+    protected $responseAsserter;
+
+
     public static function setUpBeforeClass()
     {
         self::$staticClient = new Client([
@@ -220,6 +226,14 @@ class ApiTestCase extends KernelTestCase
     public function getEntityManager()
     {
         return $this->getService('doctrine.orm.entity_manager');
+    }
+
+    protected function asserter(){
+        if ($this->responseAsserter === null){
+            $this->responseAsserter = new ResponseAsserter();
+        }
+
+        return $this->responseAsserter;
     }
 
 }
